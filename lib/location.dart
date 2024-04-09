@@ -1,27 +1,26 @@
-import 'package:codealpha/reusables/custom_button.dart';
+import 'package:codealpha/reusables/my_appbar.dart';
 import 'package:flutter/material.dart';
-
+import 'package:codealpha/reusables/custom_button.dart';
 
 class LocationPage extends StatelessWidget {
-  const LocationPage({super.key});
+  const LocationPage({Key? key});
 
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
-    double width = MediaQuery.of(context).size.width
-    ;
+    double width = MediaQuery.of(context).size.width; // Added a semicolon here
 
     return Scaffold(
+      appBar: MyAppBar(),
       backgroundColor: Colors.grey[100],
       body: Padding(
-        padding: const EdgeInsets.only(top: 60.0, left: 40, right: 40),
+        padding: const EdgeInsets.only(top: 20.0, left: 40, right: 40),
         child: Container(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text("Set Location", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 28),),
-              Text("Search by city, town, neighbourhood or postalcode", style: TextStyle( fontSize: 13),),
-
+              Text("Search by city, town, neighbourhood, or postal code", style: TextStyle(fontSize: 13),),
 
               SizedBox(height: 20.0 ),
 
@@ -36,7 +35,6 @@ class LocationPage extends StatelessWidget {
                     color: Colors.white,
                   ),
                   child: TextField(
-
                     decoration: InputDecoration(
                       hintText: 'Enter description',
                       border: InputBorder.none,
@@ -46,11 +44,9 @@ class LocationPage extends StatelessWidget {
                 ),
               ),
 
-
               SizedBox(height: 20.0 ),
 
               Text("Radius", style: TextStyle(fontSize: 24, color: Colors.grey),),
-
 
               SizedBox(height: 15.0),
 
@@ -83,6 +79,7 @@ class LocationPage extends StatelessWidget {
                   ),
                 ),
               ),
+
               SizedBox(height: 35.0),
 
               Container(
@@ -100,7 +97,6 @@ class LocationPage extends StatelessWidget {
                   ),
                 ),
               ),
-
 
               SizedBox(height: 20.0),
 

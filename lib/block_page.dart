@@ -1,5 +1,6 @@
-import 'package:codealpha/reusables/custom_button.dart';
 import 'package:flutter/material.dart';
+import 'package:codealpha/reusables/custom_button.dart';
+import 'package:codealpha/reusables/my_appbar.dart'; // Importing MyAppBar from the new path
 
 class BlockPageOne extends StatelessWidget {
   const BlockPageOne({Key? key}) : super(key: key);
@@ -9,6 +10,7 @@ class BlockPageOne extends StatelessWidget {
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
     return Scaffold(
+      appBar: MyAppBar(), // Using the imported MyAppBar widget here
       body: Stack(
         children: [
           Column(

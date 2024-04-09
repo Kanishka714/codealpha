@@ -1,5 +1,6 @@
-import 'package:codealpha/reusables/custom_button.dart';
 import 'package:flutter/material.dart';
+import 'package:codealpha/reusables/custom_button.dart';
+import 'package:codealpha/reusables/my_appbar.dart'; // Importing MyAppBar from the new path
 
 class NearlyThere extends StatelessWidget {
   const NearlyThere({super.key});
@@ -7,6 +8,7 @@ class NearlyThere extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: MyAppBar(), // Using the imported MyAppBar widget here
       body: Container(
         color: Colors.grey[100],
         child: Column(
@@ -14,7 +16,7 @@ class NearlyThere extends StatelessWidget {
             Row(
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(top: 80.0, left: 40.0),
+                  padding: const EdgeInsets.only(top: 30.0, left: 40.0),
                   child: Text(
                     "You're nearly there",
                     style: TextStyle(fontSize: 28.0, fontWeight: FontWeight.bold),
@@ -46,7 +48,7 @@ class NearlyThere extends StatelessWidget {
 
 
 
-            SizedBox(height: 10.0),
+            SizedBox(height: 150.0),
 
 
             Row(

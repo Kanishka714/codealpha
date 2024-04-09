@@ -1,4 +1,5 @@
 import 'package:codealpha/reusables/custom_button.dart';
+import 'package:codealpha/reusables/my_appbar.dart';
 import 'package:flutter/material.dart';
 
 class ReportPageOne extends StatelessWidget {
@@ -9,12 +10,13 @@ class ReportPageOne extends StatelessWidget {
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
     return Scaffold(
+      appBar: MyAppBar(),
       body: Stack(
         children: [
           Column(
             children: [
               Container(
-                height: height,
+                height: .8,
                 decoration: BoxDecoration(
                   color: Colors.teal.shade400,
                 ),

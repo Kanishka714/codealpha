@@ -1,7 +1,7 @@
+import 'package:flutter/material.dart';
 import 'package:codealpha/reusables/custom_button.dart';
 import 'package:codealpha/reusables/textfield_checkbox.dart';
-import 'package:flutter/material.dart';
-
+import 'package:codealpha/reusables/my_appbar.dart'; // Importing MyAppBar from the new path
 
 class LikeToBe extends StatefulWidget {
   const LikeToBe({Key? key});
@@ -14,6 +14,7 @@ class _LikeToBeState extends State<LikeToBe> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: MyAppBar(), // Using the imported MyAppBar widget here
       backgroundColor: Color.fromRGBO(246, 246, 246, 1.0),
       body: SingleChildScrollView(
         child: Padding(
@@ -23,7 +24,7 @@ class _LikeToBeState extends State<LikeToBe> {
               Container(
                 color: Colors.transparent,
                 child: Padding(
-                  padding: const EdgeInsets.only(top: 50.0, right: 15.0, left: 15.0),
+                  padding: const EdgeInsets.only(top: 30.0, right: 15.0, left: 15.0),
                   child: Column(
                     children: [
                       Center(
@@ -93,12 +94,12 @@ class _LikeToBeState extends State<LikeToBe> {
                       SizedBox(height: 20.0),
 
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          MyButton(borderColor: Colors.transparent,color: Colors.white, buttonText: "Cancel", textColor: Colors.black),
-                          SizedBox(width: 20.0),
+                          MyButton(borderColor: Colors.grey,color: Colors.white, buttonText: "         Cancel         ", textColor: Colors.black),
+                          SizedBox(width: 10.0),
                           MyButton(borderColor: Colors.transparent,color: Color.fromRGBO(0, 188, 199, 1.0),
-                              buttonText: "Save", textColor: Colors.white),
+                              buttonText: "         Save         ", textColor: Colors.white),
                         ],
                       ),
 

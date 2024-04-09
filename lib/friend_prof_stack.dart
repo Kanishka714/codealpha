@@ -1,20 +1,26 @@
-import 'package:codealpha/reusables/custom_button.dart';
 import 'package:flutter/material.dart';
+import 'package:codealpha/reusables/custom_button.dart';
+import 'package:codealpha/reusables/my_appbar.dart';
 
-class FriendProfileStack extends StatelessWidget {
-  const FriendProfileStack({super.key});
+class FriendProfStack extends StatelessWidget {
+  const FriendProfStack({Key? key});
 
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height;
-    double width = MediaQuery.of(context).size.width;
+    final double totalHeight = MediaQuery.of(context).size.height;
+    final double appBarHeight = 0.2 * totalHeight;
+    final double remainingHeight = totalHeight - appBarHeight;
+    final double width = MediaQuery.of(context).size.width;
+
     return Scaffold(
+      backgroundColor: Colors.grey[100],
+      appBar: MyAppBar(),
       body: Stack(
         children: [
           Column(
             children: [
               Container(
-                height: height * 3 / 5,
+                height: remainingHeight * 3 / 5, // 3/5 of the remaining height
                 width: width,
                 decoration: BoxDecoration(
                   color: Color.fromARGB(255, 34, 35, 48),
@@ -26,7 +32,7 @@ class FriendProfileStack extends StatelessWidget {
                 child: Container(
                   child: Column(
                     children: [
-                      SizedBox(height: height * 0.1),
+                      SizedBox(height: remainingHeight * 0.1),
                       Stack(
                         alignment: Alignment.center,
                         children: [
@@ -50,7 +56,7 @@ class FriendProfileStack extends StatelessWidget {
                           ),
                         ],
                       ),
-                      SizedBox(height: 20),
+                      SizedBox(height: 20.0),
 
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -71,6 +77,7 @@ class FriendProfileStack extends StatelessWidget {
                           ),
                         ],
                       ),
+
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -85,6 +92,7 @@ class FriendProfileStack extends StatelessWidget {
                           ),
                         ],
                       ),
+
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -124,13 +132,11 @@ class FriendProfileStack extends StatelessWidget {
                     ],
                   ),
                 ),
-              ),
-
-
+              ), // Close the container for profile details here
 
               Container(
                 color: Colors.grey[100],
-                height: height * 2 / 5,
+                height: remainingHeight * 2 / 5,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -146,7 +152,7 @@ class FriendProfileStack extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 20.0),
                       child: Text(
-                        "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, b. All the La the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.",
+                        "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, b. All the La the first true generator on the Internet. \n\nIt uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.",
                       ),
                     ),
                   ],
@@ -157,18 +163,17 @@ class FriendProfileStack extends StatelessWidget {
 
           Positioned(
             left: width / 2 - 30.0,
-            top: height * 3 / 5 - 30.0,  //30, is the half of icon height
+            top: remainingHeight * 3 / 5 - 30.0,  //30, is the half of icon height
             child: Container(
               //width: 200,
               //height: 200,
               child: Icon(Icons.watch_later, color: Colors.purple, size: 60.0),
             ),
           ),
-
 
           Positioned(
             left: width* .60,
-            top: height * 3 / 5 - 30.0,  //30, is the half of icon height
+            top: remainingHeight * 3 / 5 - 30.0,  //30, is the half of icon height
             child: Container(
               //width: 200,
               //height: 200,
@@ -176,12 +181,13 @@ class FriendProfileStack extends StatelessWidget {
             ),
           ),
 
+          // 3rd container
           Positioned(
-            right: width * 0.07, // Adjust this value to position it more towards the right
-            top: height * 0.02,
+            right: width * 0.07,
+            top: 0, // Adjust this value to position it at the top
             child: Container(
-              width: 70,
-              height: 70,
+              width: 90,
+              height: 80,
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(10.0),
@@ -195,10 +201,8 @@ class FriendProfileStack extends StatelessWidget {
               ),
             ),
           ),
+
         ],
-
-
-
       ),
     );
   }
