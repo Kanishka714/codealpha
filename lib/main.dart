@@ -2,7 +2,6 @@ import 'package:codealpha/begginig_scan.dart';
 import 'package:codealpha/block_page.dart';
 import 'package:codealpha/final_page.dart';
 import 'package:codealpha/friend_prof_stack.dart';
-import 'package:codealpha/friend_profile_stack.dart';
 import 'package:codealpha/like_tobe.dart';
 import 'package:codealpha/location.dart';
 import 'package:codealpha/nearly_there.dart';
@@ -24,7 +23,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LikeToBe(),
+      home: SideMenu(),
 /*
       routes:{
 
